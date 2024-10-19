@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="static/styles.css" rel="stylesheet">
+        <title>Heat Equation</title>
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Code Taken from CS50 Birthday -->
+        <link rel="shortcut icon" href="static/favicon.ico">
+    </head>
+    <body>
+        <div class="header">
+            <h1>The Steady Heat Equation</h1>
+            <h2>$$ k \nabla^2 T + q = 0 $$</h2>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h1>What is it?</h1>
+               <p>The steady-state heat equation is a partial differential equation (PDE) that describes the distribution of temperature in a given region over time when the temperature field has reached a state of equilibrium (i.e., the temperature does not change with time). It’s a simplified form of the heat equation where there is no time dependence, meaning that all heat sources and sinks have balanced out.</p>
+               <!-- Source: ChatGPT -->
+            </div>
+            <div class="section">
+                <h1> Heat conduction in a 2D plate</h1>
+                <par> Specify temperatures in boundaries and thermophysical parameters.</par>
+                <hr>
+                <div class="row">
+                    <div class="col-sm">
+                        <h2> Parameters </h2>
+                        <hr>
+                        <h3> Thermal conductivity (k)</h3>
+                        <input type="number" name="k" id="k" value="1">
+                        <hr>
+                        <h3> Heat generation rate (q)</h3>
+                        <input type="number" name="q" id="q"value="1">
+                        <hr>
+                        <h3> Geometry lenght</h3>
+                        <input type="number" name="L" id="L" value="1">
+                        <button type="button" id="calculate" onclick="calculate()" class="btn btn-primary">Calculate</button>
+                    </div>
+                    <div class="col-lg">
+                        <div class="plot-container">
+                            <input class="top-element" type="number" name="Ttop" id="Ttop" value="0">
+                            <input class="bottom-element" type="number" name="Tbottom" id="Tbottom" value="0">
+                            <input class="left-element" type="number" name="Tleft" id="Tleft" value="0">
+                            <input class="right-element" type="number" name="Tright" id="Tright" value="0">
+                            <div id="plot"></div>
+                            <script src="static/plot.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
